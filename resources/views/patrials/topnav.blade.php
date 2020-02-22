@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg fixed-top custom-nav sticky">
     <div class="container">
         <!-- LOGO -->
-        <a class="navbar-brand logo" href="index.html">
+        <a class="navbar-brand logo" href="/">
             <img src="images/logo.png" alt="" class="img-fluid logo-light">
             <img src="images/logo-dark.png" alt="" class="img-fluid logo-dark">
         </a>
