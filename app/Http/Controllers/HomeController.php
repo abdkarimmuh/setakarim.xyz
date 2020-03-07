@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Model\About;
+use App\Model\AchievementOrganization;
+use App\Model\Client;
 use App\Model\Experience;
 use App\Model\Funfact;
 use App\Model\Service;
 use App\Model\Skill;
+use App\Model\SlugWork;
+use App\Model\Social;
+use App\Model\Work;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,8 +29,14 @@ class HomeController extends Controller
         $funfacts = Funfact::all();
         $educations = Experience::where('status', 1)->get();
         $experiences = Experience::where('status', 2)->get();
+        $socials = Social::all();
+        $achievements = AchievementOrganization::where('status', 1)->get();
+        $organizations = AchievementOrganization::where('status', 2)->get();
+        $works = Work::all();
+        $slugs = SlugWork::all();
+        $clients = Client::all();
 
-        return view('index', compact('about', 'skills', 'services', 'funfacts', 'educations', 'experiences'));
+        return view('index', compact('about', 'skills', 'services', 'funfacts', 'educations', 'experiences', 'socials', 'achievements', 'organizations', 'works', 'slugs', 'clients'));
     }
 
     /**

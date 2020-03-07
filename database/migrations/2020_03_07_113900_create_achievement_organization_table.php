@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorksTable extends Migration
+class CreateAchievementOrganizationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateWorksTable extends Migration
      */
     public function up()
     {
-        Schema::create('works', function (Blueprint $table) {
+        Schema::create('achievement_organization', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('slug');
+            $table->string('title');
             $table->string('name');
-            $table->string('desc');
+            $table->string('year');
             $table->binary('file')->nullable();
+            $table->integer('status');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateWorksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('works');
+        Schema::dropIfExists('achievement_organization');
     }
 }
