@@ -19,7 +19,7 @@ class CreateBlogsTable extends Migration
             $table->binary('body');
             $table->unsignedBigInteger('category_id');
             // $table->morphs('tag_id')->nullable();
-            $table->binary('file')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

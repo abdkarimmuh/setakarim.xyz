@@ -18,7 +18,7 @@ class CreateWorksTable extends Migration
             $table->string('slug');
             $table->string('name');
             $table->string('desc');
-            $table->binary('file')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

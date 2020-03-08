@@ -29,8 +29,22 @@
             </div>
         </div>
         <div class="row mt-5">
-            @foreach ($skills as $item)
             <div class="col-md-6">
+                @foreach ($skills as $item)
+                <div class="progress-bars skill-custom">
+                    <div class="clearfix">
+                        <div class="text-dark float-left"><span class="font-weight-bold">{{ $item['name'] }}</span> ({{ $item['desc'] }})</div>
+                        <div class="text-muted float-right">{{ $item['percent'] }}%</div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{ $item['percent'] }}%"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <div class="col-md-6">
+                @foreach ($other_skills as $item)
                 <div class="progress-bars skill-custom">
                     <div class="clearfix">
                         <div class="text-dark font-weight-bold float-left">{{ $item['name'] }}</div>
@@ -41,8 +55,8 @@
                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
     </div>
 </section>

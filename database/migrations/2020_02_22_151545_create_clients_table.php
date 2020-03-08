@@ -18,7 +18,7 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('desc');
             $table->string('remarks');
-            $table->binary('file')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

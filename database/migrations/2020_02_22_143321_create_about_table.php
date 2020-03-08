@@ -17,7 +17,7 @@ class CreateAboutTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('desc');
-            $table->binary('file')->nullable();
+            $table->string('file')->nullable();
             $table->string('phone');
             $table->string('mail');
             $table->string('address');

@@ -48,20 +48,6 @@
                     @endforeach
                 </ul>
             </div>
-
-            <!-- Tags -->
-            <div class="widget mt-5">
-                <div class="sidebar_widget_title font-weight-bold text-uppercase">Tags</div>
-                <img src="/images/divider.html" alt="" class="d-block mt-2 mb-4">
-                <div class="blog_tag">
-                    <a href="#">Dragon</a>
-                    <a href="#">agency</a>
-                    <a href="#">corporate</a>
-                    <a href="#">e-commerce</a>
-                    <a href="#">business</a>
-                    <a href="#">responsive</a>
-                </div>
-            </div>
         </div>
     </div>
 </div>

@@ -41,15 +41,6 @@
                                     <p class="text-muted float-left mb-0">By <span class="text-custom font-weight-bold">Muhammad Abdul Karim</span>&nbsp;&nbsp;|&nbsp;&nbsp;{{$blog['date']}}</p>
                                 </div>
                                 <div>{!! $blog['body'] !!}</div>
-                                <div class="blog_detail_devider mt-3 mb-3"></div>
-                                <div class="blog_tag mt-3">
-                                    <a href="#">Dragon</a>
-                                    <a href="#">agency</a>
-                                    <a href="#">corporate</a>
-                                    <a href="#">e-commerce</a>
-                                    <a href="#">business</a>
-                                    <a href="#">responsive</a>
-                                </div>
                             </div>
                         </div>
                     </div>

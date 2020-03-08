@@ -18,7 +18,7 @@ class CreateAchievementOrganizationTable extends Migration
             $table->string('title');
             $table->string('name');
             $table->string('year');
-            $table->binary('file')->nullable();
+            $table->string('file')->nullable();
             $table->integer('status');
             $table->timestamps();
         });

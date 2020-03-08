@@ -25,7 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $about = About::all()->first();
-        $skills = Skill::all();
+        $skills = Skill::where('status', 1)->get();
+        $other_skills = Skill::where('status', 2)->get();
         $services = Service::all();
         $funfacts = Funfact::all();
         $educations = Experience::where('status', 1)->get();
@@ -38,7 +39,7 @@ class HomeController extends Controller
         $clients = Client::all();
         $blogs = Blogs::all()->sortByDesc('created_at')->take(3);
 
-        return view('home.index', compact('about', 'skills', 'services', 'funfacts', 'educations', 'experiences', 'socials', 'achievements', 'organizations', 'works', 'slugs', 'clients', 'blogs'));
+        return view('home.index', compact('about', 'skills', 'other_skills', 'services', 'funfacts', 'educations', 'experiences', 'socials', 'achievements', 'organizations', 'works', 'slugs', 'clients', 'blogs'));
     }
 
     /**
