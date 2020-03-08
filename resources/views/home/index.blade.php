@@ -4,54 +4,54 @@
 @include('patrials.topnav')
 
 <!--START HOME-->
-@include('patrials.home.home')
+@include('home.patrials.home')
 <!--END HOME-->
 
 <!-- START ABOUT -->
-@include('patrials.home.about')
+@include('home.patrials.about')
 <!-- END ABOUT -->
 
 <!-- START SERVICES -->
-@include('patrials.home.services')
+@include('home.patrials.services')
 <!-- END SERVICES -->
 
 <!-- END FUNFACTS -->
-@include('patrials.home.funfacts')
+@include('home.patrials.funfacts')
 <!-- START FUNFACTS -->
 
 <!-- START EXP. & EDU. -->
-@include('patrials.home.experiences')
+@include('home.patrials.experiences')
 <!-- END EXP. & EDU. -->
 
 <!-- START ORG. & ACH. -->
-@include('patrials.home.organizations')
+@include('home.patrials.organizations')
 <!-- END ORG. & ACH. -->
 
 <!-- START CTA -->
-{{-- @include('patrials.home.cta') --}}
+{{-- @include('home.patrials.cta') --}}
 <!-- END CTA -->
 
 <!--START WORK -->
-@include('patrials.home.work')
+@include('home.patrials.work')
 <!--END WORK -->
 
 <!-- START CLIENT -->
-@include('patrials.home.client')
+@include('home.patrials.client')
 <!-- END CLIENT -->
 
 <!-- START GREAT PEOPLE -->
-{{-- @include('patrials.home.great-people') --}}
+{{-- @include('home.patrials.great-people') --}}
 <!-- END GREAT PEOPLE -->
 
 <!-- START SUBCRIBE  -->
-{{-- @include('patrials.home.suscribe') --}}
+{{-- @include('home.patrials.suscribe') --}}
 <!-- END SUBCRIBE -->
 
 <!-- START BLOG -->
-@include('patrials.home.blog')
+@include('home.patrials.blog')
 <!-- END BLOG -->
 
 <!-- CONTACT FORM START-->
-@include('patrials.home.contact')
+@include('home.patrials.contact')
 <!-- CONTACT FORM END-->
 @endsection

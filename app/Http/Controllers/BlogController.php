@@ -2,20 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\About;
-use App\Model\AchievementOrganization;
 use App\Model\Blogs;
-use App\Model\Client;
-use App\Model\Experience;
-use App\Model\Funfact;
-use App\Model\Service;
-use App\Model\Skill;
-use App\Model\SlugWork;
+use App\Model\Categories;
 use App\Model\Social;
-use App\Model\Work;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class HomeController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,21 +17,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $about = About::all()->first();
-        $skills = Skill::all();
-        $services = Service::all();
-        $funfacts = Funfact::all();
-        $educations = Experience::where('status', 1)->get();
-        $experiences = Experience::where('status', 2)->get();
         $socials = Social::all();
-        $achievements = AchievementOrganization::where('status', 1)->get();
-        $organizations = AchievementOrganization::where('status', 2)->get();
-        $works = Work::all();
-        $slugs = SlugWork::all();
-        $clients = Client::all();
-        $blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+        $blogs = Blogs::all();
+        $categories = Categories::all();
+        $last_blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+        
+        return view('blog.index', compact('socials', 'blogs', 'categories', 'last_blogs'));
 
-        return view('home.index', compact('about', 'skills', 'services', 'funfacts', 'educations', 'experiences', 'socials', 'achievements', 'organizations', 'works', 'slugs', 'clients', 'blogs'));
     }
 
     /**
@@ -68,9 +53,30 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function category($id)
+    {
+        $socials = Social::all();
+        $blogs = Blogs::where('category_id', $id)->get();
+        $categories = Categories::all();
+        $last_blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+
+        return view('blog.index', compact('socials', 'blogs', 'categories', 'last_blogs'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        //
+        $socials = Social::all();
+        $blog = Blogs::find($id);
+        $categories = Categories::all();
+        $last_blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+
+        return view('blog.detail', compact('socials', 'blog', 'categories', 'last_blogs'));
     }
 
     /**
