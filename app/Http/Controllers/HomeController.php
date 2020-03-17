@@ -29,15 +29,15 @@ class HomeController extends Controller
         $other_skills = Skill::where('status', 2)->get();
         $services = Service::all();
         $funfacts = Funfact::all();
-        $educations = Experience::where('status', 1)->get();
-        $experiences = Experience::where('status', 2)->get();
+        $educations = Experience::orderByDesc('id')->where('status', 1)->get();
+        $experiences = Experience::orderByDesc('id')->where('status', 2)->get();
         $socials = Social::all();
-        $achievements = AchievementOrganization::where('status', 1)->get();
-        $organizations = AchievementOrganization::where('status', 2)->get();
+        $achievements = AchievementOrganization::orderByDesc('id')->where('status', 1)->get();
+        $organizations = AchievementOrganization::orderByDesc('id')->where('status', 2)->get();
         $works = Work::all();
         $slugs = SlugWork::all();
         $clients = Client::all();
-        $blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+        $blogs = Blogs::all()->sortByDesc('id')->take(3);
 
         return view('home.index', compact('about', 'skills', 'other_skills', 'services', 'funfacts', 'educations', 'experiences', 'socials', 'achievements', 'organizations', 'works', 'slugs', 'clients', 'blogs'));
     }

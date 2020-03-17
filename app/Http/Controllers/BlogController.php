@@ -20,7 +20,7 @@ class BlogController extends Controller
         $socials = Social::all();
         $blogs = Blogs::all();
         $categories = Categories::all();
-        $last_blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+        $last_blogs = Blogs::all()->sortByDesc('id')->take(3);
         
         return view('blog.index', compact('socials', 'blogs', 'categories', 'last_blogs'));
 
@@ -58,7 +58,7 @@ class BlogController extends Controller
         $socials = Social::all();
         $blogs = Blogs::where('category_id', $id)->get();
         $categories = Categories::all();
-        $last_blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+        $last_blogs = Blogs::all()->sortByDesc('id')->take(3);
 
         return view('blog.index', compact('socials', 'blogs', 'categories', 'last_blogs'));
     }
@@ -74,7 +74,7 @@ class BlogController extends Controller
         $socials = Social::all();
         $blog = Blogs::find($id);
         $categories = Categories::all();
-        $last_blogs = Blogs::all()->sortByDesc('created_at')->take(3);
+        $last_blogs = Blogs::all()->sortByDesc('id')->take(3);
 
         return view('blog.detail', compact('socials', 'blog', 'categories', 'last_blogs'));
     }
