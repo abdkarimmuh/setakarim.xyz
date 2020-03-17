@@ -31,9 +31,9 @@
                 <li class="nav-item">
                     <a href="#client" class="nav-link">Client</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#blog" class="nav-link">Blog</a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a href="#contact" class="nav-link">Contact</a>
                 </li>

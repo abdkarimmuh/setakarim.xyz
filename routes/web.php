@@ -27,8 +27,8 @@ Route::name('home.')->prefix('/')->group(function () {
     Route::get('/', 'HomeController@index')->name('index');
 });
 
-Route::name('blog.')->prefix('/blog')->group(function () {
-    Route::get('/', 'BlogController@index')->name('index');
-    Route::get('/{id}', 'BlogController@show')->name('show');
-    Route::get('/category/{id}', 'BlogController@category')->name('category');
-});
+// Route::name('blog.')->prefix('/blog')->group(function () {
+//     Route::get('/', 'BlogController@index')->name('index');
+//     Route::get('/{id}', 'BlogController@show')->name('show');
+//     Route::get('/category/{id}', 'BlogController@category')->name('category');
+// });

@@ -48,7 +48,7 @@
 <!-- END SUBCRIBE -->
 
 <!-- START BLOG -->
-@include('home.patrials.blog')
+{{-- @include('home.patrials.blog') --}}
 <!-- END BLOG -->
 
 <!-- CONTACT FORM START-->
